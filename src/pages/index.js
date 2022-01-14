@@ -1,4 +1,3 @@
-export {default as Register} from './Register'
 export {default as Employee} from './Employee'
 export {default as Home} from './Home'
 export {default as CompanyHome} from './CompanyHome'
