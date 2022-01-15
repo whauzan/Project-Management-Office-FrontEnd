@@ -65,26 +65,21 @@ function ScrumDetail() {
         window.location.reload();
     }
 
-    useEffect(() => {
-        (async () => {
-            try {
-                await fetch(`http://localhost:8080/scrum/getone?id=${id}`)
-                .then(res => res.json())
-                .then((result) => {
-                    setScrum(result)
-                })
-            } catch(error) {
-                console.log(error);
-            }
-        })()
+    useEffect( async() => {
+        var ada
+        await fetch(`http://localhost:8080/scrum/getone?id=${id}`)
+        .then(res => res.json())
+        .then((result) => {
+            ada = result;
+            setScrum(result)
+        })
 
-        fetch(`http://localhost:8080/projectManager/getone?id=${scrum?.project.project_manager_id}`)
+        await fetch(`http://localhost:8080/projectManager/getone?id=${ada.project.project_manager_id}`)
         .then(res => res.json())
         .then((result2) => {
             setProjectManager(result2)
         })
     }, [])
-    console.log(projectManager);
     return (
         <>
             <NavbarCompany />
