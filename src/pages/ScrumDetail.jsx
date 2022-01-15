@@ -212,7 +212,7 @@ function ScrumDetail() {
                             </Dialog>
                         </Transition>
                     </div>
-                    <div className='overflow-auto rounded-lg shadow-lg hidden md:block'>
+                    <div className='overflow-auto rounded-lg shadow-lg'>
                         <table className='table-auto w-full'>
                             <thead className='bg-gray-50 border-2 border-gray-200 text-black'>
                                 <tr>
