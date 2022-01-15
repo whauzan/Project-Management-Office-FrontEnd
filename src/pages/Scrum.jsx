@@ -67,6 +67,13 @@ function Scrum() {
         }
     }
 
+    const cleanTeam = (list) => {
+        const team = list.filter(element => {
+            return (element.scrum_idx === 0)
+        });
+        return team;
+    }
+
     useEffect(() => {
         fetch(`http://localhost:8080/project/get`)
         .then(res => res.json())
@@ -77,7 +84,7 @@ function Scrum() {
         fetch(`http://localhost:8080/team/getAll`)
         .then(res => res.json())
         .then((result2) => {
-            setTeam(result2)
+            setTeam(cleanTeam(result2))
         })
     }, [])
     return (
@@ -165,7 +172,7 @@ function Scrum() {
                                 <div className="inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-[#f5e3e0] shadow-xl rounded-2xl">
                                     <div className="max-w-md w-full space-y-8">
                                         <div>
-                                            <h2 className="text-center text-3xl font-extrabold text-[#991B19]">Add Member</h2>
+                                            <h2 className="text-center text-3xl font-extrabold text-[#991B19]">Add Team</h2>
                                         </div>
                                         {team.length ? 
                                             <table className='table-auto w-full'>
