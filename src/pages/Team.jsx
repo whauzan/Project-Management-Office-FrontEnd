@@ -166,7 +166,7 @@ function Team() {
                                         <div className="inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-[#f5e3e0] shadow-xl rounded-2xl">
                                             <div className="max-w-md w-full space-y-8">
                                                 <div>
-                                                    <h2 className="text-center text-3xl font-extrabold text-black">Register Team</h2>
+                                                    <h2 className="text-center text-3xl font-extrabold text-[#991B19]">Register Team</h2>
                                                 </div>
                                                 <form className="mt-8 space-y-6" action="#" method="POST">
                                                     <input type="hidden" name="remember" defaultValue="true" />
